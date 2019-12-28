@@ -27,8 +27,12 @@ app.get("/api/hello", function (req, res) {
 app.get('/api/whoiam', function(req, res) {
   let clientAddress = (req.headers['x-forwarded-for'] || '').split(',')[0] || req.connection.remoteAddress
   let clientLanguage = req.headers['accept-language'].split(',')[0]
-  
-  res.json(req.headers)
+  let clientSoftware = req.headers['user-agent'].split(/[\(\)]/)[1]
+  res.json({
+    ipaddress: clientAddress,
+    language: clientLanguage,
+    software: clientSoftware
+  })
 })
 ////////////////////////////////////////////////////////////////////
 // listen for requests :)
