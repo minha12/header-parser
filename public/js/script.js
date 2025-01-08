@@ -1,7 +1,7 @@
 // Configure API base URL
 const BASE_URL = window.location.hostname === 'localhost' 
   ? '' 
-  : 'http://localhost:3000';
+  : 'https://header-parser-dapl.onrender.com';
 
 async function testAPI() {
   const result = document.getElementById('result');
