@@ -24,7 +24,7 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 /////////////////////////////////////////////////////////////////////
-app.get('/api/whoiam', function(req, res) {
+app.get('/api/whoami', function(req, res) {
   let clientAddress = (req.headers['x-forwarded-for'] || '').split(',')[0] || req.connection.remoteAddress
   let clientLanguage = req.headers['accept-language'].split(',')[0]
   let clientSoftware = req.headers['user-agent'].split(/[\(\)]/)[1]
